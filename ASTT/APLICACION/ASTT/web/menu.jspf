@@ -1,0 +1,149 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<%@ page import="java.util.*" session="true" %>
+<% 
+
+    HttpSession sesionmenu = request.getSession(true);
+    String tipoUsuario = "";
+    String isChofer="No";
+    String logged="No";
+    String hasVehiculos="No";
+    if(sesionmenu!=null){
+        if (sesionmenu.getAttribute("idusuario")  == null) {
+            //response.sendRedirect("login.jsp");
+            logged="No";
+        }else{
+            tipoUsuario = (String)sesionmenu.getAttribute("tipo");
+            logged="Yes";
+            isChofer=(String)sesionmenu.getAttribute("chofer");
+            hasVehiculos=(String)sesionmenu.getAttribute("vehiculos");
+        }
+    }else{
+       logged="No";
+       // response.sendRedirect("login.jsp");
+    }
+%>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<div class="modal fade" id="myModalSesion" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="myModalTitle">Datos de la sesión</h4>
+                    </div>
+                    <div class="modal-body" id="myModalMessage">
+                        <ul>
+                            <li><p><b>Usuario:</b> <% out.print(sesionmenu.getAttribute("idusuario")); %></p></li>
+                            <li><p><b>Tipo: </b><% out.print(tipoUsuario); %></p></li>
+                            <li><p><b>Chofer: </b><% out.print(isChofer); %></p></li>
+                            <li><p><b>Vehiculos: </b><% out.print(hasVehiculos); %></p></li>
+                            <li><p><b>logged: </b><% out.print(logged); %></p></li>
+                            <li><p><b>Id sesión:</b> <% out.println(sesionmenu.getId()); %></p></li>
+                            <li><p><b>Nueva?: </b> <% out.println(sesionmenu.isNew()); %></p></li>
+                            <% 
+                                long longDuracion=sesionmenu.getLastAccessedTime(); sesionmenu.getCreationTime();
+                                Date duracion=new Date(longDuracion);
+                            %>
+                            <li><p><b>Tiempo sesión: </b><% out.println(duracion.getMinutes()+"min. "+duracion.getSeconds()+"seg."); %></p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class ="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.jsp" ><h2>ASTT</h2></a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+            
+            <% if(tipoUsuario.equals("Administrador")) { %> 
+            <ul class="nav navbar-nav navbar-left">
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Opciones de administración <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="opcionesAdministrador.jsp">Opciones Administracion</a></li>
+                        <li class="divider"></li>
+                        <li><a href="gestionUsuario.jsp">Gestión de Usuarios</a></li>
+                        <li class="divider"></li>
+                        <li><a href="gestionVehiculo.jsp">Gestión de Vehiculos</a></li>
+                        <li class="divider"></li>
+                        <li><a href="gestionChofer.jsp">Gestión de Choferes</a></li>
+                        <li class="divider"></li>
+                        <li><a href="gestionChofervehiculo.jsp">Gestión de Choferes / Vehiculos</a></li>
+                        <li class="divider"></li>
+                        <li><a href="gestionServicio.jsp">Gestión de Servicios</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Ver reportes</a></li>
+                        <li class="divider"></li>
+                    </ul>
+                </li>
+            </ul>
+            <% } %>
+            
+            <% if(logged.equals("Yes")) { %>  
+            <ul class="nav navbar-nav navbar-nav">
+                     <li class="dropdown">                   
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img id="car" src="images/car.png" alt=""/></a>
+                    <ul class="dropdown-menu dropdown-menu-left">
+                        <li><a href="solicitarServicio.jsp"><span class="glyphicon glyphicon-user"></span>Solicitar Viaje</a></li>
+                        <li class="divider"></li>
+                        
+                        <% if(isChofer.equals("Yes")) { %>  
+                        <li><a href="vehiculos.jsp"><span class="glyphicon glyphicon-road"></span>Brindar Viaje</a></li>
+                        <li class="divider"></li> 
+                        <% } %>
+                        
+                        <li><a href="vehiculos.jsp"><span class="glyphicon glyphicon-road"></span>Historial de Viajes</a></li>
+                        <li class="divider"></li> 
+                    </ul>
+                   </li>
+             </ul>
+             <% } %>   
+            <ul class="nav navbar-nav navbar-right">
+                <% if(logged.equals("Yes")) { %>  
+                <li class="dropdown">
+                    
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Opciones de usuario <span class="caret"></span></a>
+                    <ul class="dropdown-menu dropdown-menu-left">
+                        <li><a href="usuario.jsp"><span class="glyphicon glyphicon-user"></span>Opciones de Perfil </a></li>
+                        <li class="divider"></li>
+                        <li><a href="vehiculos.jsp"><span class="glyphicon glyphicon-road"></span>Gestionar Vehiculos </a></li>
+                        <li class="divider"></li>
+                        <li><a href="Logout"><span class="glyphicon glyphicon-log-in"></span> Cerrar sesión </a></li>
+                        <li class="divider"></li>
+                        <li><button type="button" class="btn btn-info centered" data-toggle="modal" data-target="#myModalSesion" id="btMostarSesion">Mostrar datos de la sesión</button>
+                       </li>
+                        <li class="divider"></li>
+                    </ul>
+                </li>
+                <% } %> 
+                <% if(logged.equals("No")) { %> 
+              <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Iniciar Sesion <span class="caret"></span></a>
+                    <ul class="dropdown-menu dropdown-menu-left">
+                        <li><a href="login.jsp"><span class="glyphicon glyphicon-user"></span>Log in</a></li>
+                        <li class="divider"></li>
+                        <li><a href="signin.jsp"><span class="glyphicon glyphicon-user"></span>Sign in</a></li>
+                        <li class="divider"></li>
+                    </ul>
+                </li>
+                <% } %> 
+                
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+

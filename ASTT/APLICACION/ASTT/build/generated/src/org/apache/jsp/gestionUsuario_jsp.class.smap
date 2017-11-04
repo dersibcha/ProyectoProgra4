@@ -1,0 +1,14 @@
+SMAP
+gestionUsuario_jsp.java
+JSP
+*S JSP
+*F
++ 0 gestionUsuario.jsp
+gestionUsuario.jsp
++ 1 menu.jspf
+menu.jspf
+*L
+1,16:49
+1#1,56:65
+16#0,300:120
+*E

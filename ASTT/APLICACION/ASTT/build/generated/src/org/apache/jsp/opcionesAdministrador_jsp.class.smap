@@ -1,0 +1,18 @@
+SMAP
+opcionesAdministrador_jsp.java
+JSP
+*S JSP
+*F
++ 0 opcionesAdministrador.jsp
+opcionesAdministrador.jsp
++ 1 links.jspf
+links.jspf
++ 2 menu.jspf
+menu.jspf
+*L
+1,7:50
+1#1,10:57
+7#0,2:67
+1#2,56:69
+8#0,36:124
+*E

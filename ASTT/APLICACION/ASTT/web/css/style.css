@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Nunito|Oswald|Baloo+Tammudu');
+@import url('https://fonts.googleapis.com/css?family=Audiowide|Michroma');
+body{ background-color: #E0FFFF;}
+textarea {resize: none;}
+input{-webkit-autofill: off;}
+a{color: #EE8420;}
+h1{
+    font-family: 'Nunito';
+    text-shadow: 2px 2px #CCCCCC;
+}
+td, tr, th {
+    text-align:center; 
+    vertical-align:middle;
+}
+
+/**************PANEL***************/
+.panel.panel-primary{border-color: #A9A9A9 !important;}
+
+.panel-heading{
+    background-color: #000000 !important;
+    border-color: #A9A9A9 !important;
+}
+
+.modal-header{
+    background-color: #A9A9A9; /*GRIS DE NAVBAR*/
+    color: #FFFFFF;
+} 
+
+.test + .tooltip > .tooltip-inner {
+    background-color: #EE8420; /*NARANJA OSCURO*/
+    border: 1px solid #EE8420; 
+    padding: 15px;   
+    font-size: 13px;
+}
+
+.icon-bar{
+    background-color: #FFFFFF !important;
+}
+/**************BOTONES******************/
+#btMostrarForm, #iniciarSesion, #desplegarMenu{
+    vertical-align: middle;
+    background-color: #C0C0C0 !important;
+    border-color: #E0FFFF !important;
+}
+
+#btMostrarForm:hover, #iniciarSesion:hover, #desplegarMenu:hover, #user:hover, 
+#btMostrarForm:focus, #iniciarSesion:focus, #desplegarMenu:focus, #user:focus {
+    background-color: #A9A9A9 !important; /*NARANJA AÚN MÁS OSCURO*/
+    border-color: #C0C0C0 !important;
+    color: #FFFFFF !important;
+}
+
+#btnInf, #btnFun {
+    background-color: #EC9600 !important;
+    border-color: #EC9600 !important;
+    color: #FFFFFF !important;
+    /*font-size: 16px;*/
+}
+
+#btnInf:hover, #btnFun:hover {
+    background-color: #ffb84d !important;
+    color: #FFFFFF !important;
+}
+
+#user{
+    background-color: #EC9600 !important;
+}
+
+#session{
+    background-color: #E74C3C !important;
+    color: #FFFFFF !important;
+}
+
+/****************NAVBAR******************/
+.navbar{
+    background-color: #C0C0C0;
+    border-color: #000000;
+    color: #ffffff !important;
+    box-shadow: 6px 6px 0px rgba(103, 102, 102, 0.2);
+}
+
+.navbar .navbar-brand {
+    font-family: 'Michroma', sans-serif;
+    color: #ffffff !important;
+}
+
+.navbar-default .navbar-brand h2{
+    font-family: 'Michroma', sans-serif;
+    text-shadow: 2px 2px #CCCCCC;
+    margin-top: -7px;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+    color: #000000 !important;
+}
+
+.navbar-default .navbar-nav > li > a{
+    background-color: #808080 !important;
+    color: #FFFFFF !important;
+    font-size: 18px;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:checked, #session:hover, #session focus{
+    background-color: #2F4F4F !important;
+    color: #FFFFFF !important;
+}
+
+
+/*.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
+    color: #FFFFFF !important;
+    background-color: #5bc0de !important;
+}*/
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
+    color: #FFFFFF !important;
+    background-color: #5bc0de !important;
+}
+
+.divider-vertical {
+    height: 50px;
+    /*margin: 0 9px;*/
+    border-left: 2px solid #EC9600;
+    border-right: 2px solid #EC9600;
+}
+
+/********************************************************/
+
+input[type=radio] {
+    position: absolute;
+    visibility: hidden;
+    display: none;
+}
+
+.radioOption {
+    height: 36px;
+    font-style: normal;
+    display: inline-block;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+input[type=radio]:checked + label{
+    color: white;
+    background: #EE8420 !important;
+}
+
+.radio-group {
+    height: 36px;
+    border: solid 1px #EE8420 !important;
+    display: inline-block;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.imgGestion{
+    border-radius: 10px;
+    background-color: #5bc0de !important;
+    height: 150px;
+    width: 300px;
+    color: white;
+    text-shadow: 1px 1px gray;
+    font-size: 25px;
+    font-family: 'Nunito';
+    line-height: 160px;
+}
+.imgGestionCV{
+    border-radius: 10px;
+    background-color: #5bc0de !important;
+    height: 150px;
+    width: 300px;
+    color: white;
+    text-shadow: 1px 1px gray;
+    font-size: 20px;
+    font-family: 'Nunito';
+    line-height: 160px;
+}
+
+.row div a {
+    text-decoration: none;
+}
+
+/*************INICIO****************/
+.imgGestion:hover{
+    box-shadow: 9px 9px 9px rgba(103, 102, 102, 0.5);
+}
+
+.imgGestion:active, .imgGestion:focus{
+    box-shadow: 3px 3px 3px rgba(103, 102, 102, 0.5);
+    top: 3px;
+}
+
+.imgGestionCV:hover{
+    box-shadow: 9px 9px 9px rgba(103, 102, 102, 0.5);
+}
+
+.imgGestionCV:active, .imgGestion:focus{
+    box-shadow: 3px 3px 3px rgba(103, 102, 102, 0.5);
+    top: 3px;
+}
+
+#gestUsuarios{
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../images/usuarios.jpg");
+    /*IMAGE SOURCE: https://www.careerkeys.com.au/wp-content/uploads/2015/02/Education-support-2-1150x647.jpg*/
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#gestVehiculos{
+    /*background-image: url("../imagenes/kinder-small.jpg");*/
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../images/vehiculos.jpg");
+    /*IMAGE SOURCE: https://tctechcrunch2011.files.wordpress.com/2014/11/kids-playing-with-toys.jpg*/
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#gestChoferes{
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../images/choferes.jpg");
+    /*IMAGE SOURCE: https://ed.stanford.edu/sites/default/files/news_images/kinder-small.jpg*/
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#gestChofervehiculos{
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../images/chofervehiculos.jpg");
+    /*IMAGE SOURCE: http://www.eatrightontario.ca/EatRightOntario/media/ERO_Images/Sample-meal-plan-for-feeding-your-preschooler-v-2-resized.jpeg*/
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#gestServicios{
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../images/servicios.jpg");
+    /*IMAGE SOURCE: http://valleyrecoveryandtreatment.com/wp-content/uploads/2017/04/o-FULL-DAY-KINDERGARTEN-facebook.jpg*/
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#gestReportes{
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../images/reportes.jpg");
+    /*IMAGE SOURCE: http://valleyrecoveryandtreatment.com/wp-content/uploads/2017/04/o-FULL-DAY-KINDERGARTEN-facebook.jpg*/
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#car{
+    margin-top: -15px;
+    margin-bottom: -18px;
+   height: 50px;
+   width: 80px; 
+}

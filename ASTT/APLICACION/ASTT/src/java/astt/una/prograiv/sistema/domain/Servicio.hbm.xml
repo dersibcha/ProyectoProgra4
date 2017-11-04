@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 27/09/2017 02:51:14 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="astt.una.prograiv.sistema.domain.Servicio" table="servicio" catalog="transporte" optimistic-lock="version">
+        <id name="idservicio" type="int">
+            <column name="idservicio" />
+            <generator class="identity" />
+        </id>
+        <property name="idchofervehiculo" type="int">
+            <column name="idchofervehiculo" not-null="true" />
+        </property>
+        
+        <property name="origen" type="string">
+            <column name="origen" length="40" not-null="true" />
+        </property>
+        <property name="destino" type="string">
+            <column name="destino" length="45" />
+        </property>
+                
+        <property name="idusuario" type="string">
+            <column name="idusuario" length="20"  not-null="true"/>
+        </property>
+        <property name="horasalida" type="timestamp">
+            <column name="horasalida" length="19" not-null="true"/>
+        </property>
+        <property name="horallegada" type="timestamp">
+            <column name="horallegada" length="19" />
+        </property>
+        <property name="costo" type="float">
+            <column name="costo" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="retroalimentacion" type="string">
+            <column name="retroalimentacion" length="45" />
+        </property>
+        
+        <property name="formapago" type="string">
+            <column name="formapago" length="45" not-null="true" />
+        </property>
+        <property name="fecha" type="timestamp">
+            <column name="fecha" length="19" />
+        </property>
+        <property name="usuario" type="string">
+            <column name="usuario" length="20" />
+        </property>
+    </class>
+</hibernate-mapping>
